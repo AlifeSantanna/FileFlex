@@ -186,6 +186,7 @@ table th {
     height: 50px;
     padding: 5px;
     border: 1px solid #cecccc;
+    color: var(--color-4);
 }
 
 table td {
