@@ -166,25 +166,25 @@ function displayTotalData(data) {
     var cellQuantitativo = document.createElement("td");
     var numRefeicoes = parseInt(data[i]["Nº de Refeições"]) || 0;
     var quantitativo = (numRefeicoes * 1000).toString().padStart(6, "0");
-    
+
     var inputElement = document.createElement("input");
     inputElement.type = "text";
     inputElement.maxLength = 6; // Define o limite máximo de caracteres
     inputElement.value = quantitativo;
-    
-    inputElement.addEventListener("input", function() {
+
+    inputElement.addEventListener("input", function () {
       var inputValue = inputElement.value;
       if (inputValue.length > 6) {
         inputElement.value = inputValue.slice(0, 6); // Trunca o valor para 6 caracteres
       }
       quantitativo = inputElement.value;
     });
-    
+
     cellQuantitativo.appendChild(inputElement);
     row.appendChild(cellQuantitativo);
     tbody.appendChild(row);
-    
-    
+
+
   }
 
   var totalInfoSpan = document.getElementById("totalInfoSpan");
@@ -413,7 +413,7 @@ function stepThree() {
       var empresa = cells[0].innerText.trim();
       var estabelecimento = cells[1].innerText.trim();
       var chapa = cells[2].innerText.trim();
-      var quantitativo = cells[3].innerText.trim();
+      var quantitativo = cells[3].querySelector('input').value;
       var line = empresa + estabelecimento + chapa + quantitativo;
       content += line + "\n";
     }
