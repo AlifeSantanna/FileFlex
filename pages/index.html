@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="text-3xl font-bold">
+            <a href="index.html">
+                FileFlex
+            </a>
+        </h1>
+        <nav>
+            <ul class="flex space-x-4">
+                <li>
+                    <a href="https://www.linkedin.com/in/alife-sant-anna-5a43891a2/">Desenvolvido por Alife
+                        Sant'anna<br>
+                        <span>© Copyright 2023</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div id="step1" class="wrapper">
+            <div class="box">
+                <h2>Relatório <span>(.xlsx)</span></h2>
+                <div class="file_container">
+                    <span id="xlsFileName">Clique ou arraste para adicionar algum arquivo</span>
+                    <input type="file" id="xlsFileInput" accept=".xlsx" onchange="handleXLSFileChange(event)" />
+                </div>
+            </div>
+            <div class="x">X</div>
+            <div class="box">
+                <h2>Log de acesso <span>(.txt)</span></h2>
+                <div class="file_container">
+                    <span id="txtFileName">Clique ou arraste para adicionar algum arquivo</span>
+                    <input type="file" id="txtFileInput" accept=".txt" onchange="handleTXTFileChange(event)" />
+                </div>
+            </div>
+        </div>
+
+        <div id="step2" class="wrapper" style="display: none;">
+            <div id="loader" class="loader" style="display: none;"></div>
+            <div class="">
+                <div class="header_table">
+                    <span id="totalInfoSpan"></span>
+                    <input type="text" id="searchInput" oninput="searchTable()" placeholder="Pesquisar">
+                    <button id="deleteButton" onclick="deleteSelectedRows()">Deletar</button>
+                </div>
+                <div class="table_container">
+                    <div class="table">
+                        <table id="data-table">
+                            <thead>
+                                <tr style="background-color:#1c7c54; color: #ffffff">
+                                    <th><input type="checkbox" id="selectAll" onchange="selectAllRows()" /></th>
+                                    <th>Chapa</th>
+                                    <th>Dia</th>
+                                    <th>Mês</th>
+                                    <th>Ano</th>
+                                    <th>Hora</th>
+                                    <th>Minuto</th>
+                                    <th>Segundo</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="step3" class="wrapper" style="display: none;">
+            <div id="loader" class="loader" style="display: none;"></div>
+            <div class="">
+                <div class="header_table"></div>
+                <div class="table_container">
+                    <div class="table">
+                        <table id="data-table-final">
+                            <thead>
+                                <tr style="background-color:#1c7c54; color: #ffffff;">
+                                    <th>Empresa <input
+                                            style="height: 40px; width: 100%;margin-top:5px;background-color: #def4c6; border: none; border-radius: 5px; text-align: center;"
+                                            oninput="updateInputValues()" id="empresa" /></th>
+                                    <th>Estabelecimento <input
+                                            style="height: 40px; width: 100%;margin-top:5px;background-color: #def4c6; border: none; border-radius: 5px; text-align: center;"
+                                            oninput="updateInputValues()" id="estabelecimento" /></th>
+                                    <th class="width:100%">Chapa</th>
+                                    <th>Quantitativo</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container_button">
+            <button id="nextButton" onclick="stepOne()" disabled>Próximo (1/3)</button>
+        </div>
+    </div>
+
+
+    <script src="/scripts/script.js" defer></script>
+</body>
+
+</html>
