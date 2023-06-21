@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
 
 :root {
-    --color-1: #1c7c54;
-    --color-2: #73e2a7;
-    --color-3: #def4c6;
+    --color-1: #388659;
+    --color-2: #52aa5e;
+    --color-3: #52aa8a;
     --color-4: #ffffff;
     --color-5: #111827;
 }
@@ -16,13 +15,12 @@
     list-style: none;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
-
-    transition: .2s;
+    color: var(--color-5);
 }
 
 
 header {
-    background-color: var(--color-1);
+    background-color: var(--color-5);
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
@@ -31,8 +29,6 @@ header {
 
 header h1 {
     color: var(--color-4);
-    font-family: 'Lemon', cursive !important;
-    font-weight: bolder;
 }
 
 
@@ -65,7 +61,7 @@ a {
 }
 
 a:hover {
-    color: var(--color-3);
+    color: var(--color-2);
 }
 
 li span {
@@ -80,7 +76,6 @@ li span {
 }
 
 .wrapper {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,7 +109,7 @@ li span {
 .x {
     font-size: 90px;
     font-weight: bold;
-    color: var(--color-2);
+    color: var(--color-1);
     user-select: none;
 }
 
@@ -129,7 +124,7 @@ li span {
     user-select: none;
     width: 100%;
     height: 85%;
-    border: 2px var(--color-2) dashed;
+    border: 2px var(--color-5) dashed;
     position: relative;
     display: flex;
     justify-content: center;
@@ -177,7 +172,7 @@ li span {
 
 
 .container_button button:hover {
-    background-color: var(--color-2);
+    background-color: var(--color-3);
     transition: .2s;
 }
 
@@ -197,6 +192,7 @@ table th {
     border: 1px solid #cecccc;
 }
 
+
 table td {
     text-align: start;
     height: 40px;
@@ -204,18 +200,17 @@ table td {
     border: 1px solid #cecccc;
 }
 
-table th,
-table td {
+table th:first-child,
+table td:first-child {
     text-align: center;
 }
 
 #deleteButton {
     padding: 8px 20px;
-    color: var(--color-4);
+    color: red;
+    border: 1px solid red;
     border-radius: 3px;
-    background-color: #ff3c38ba;
-    cursor: pointer;
-    border: none;
+    background-color: transparent;
 }
 
 #searchInput {
@@ -250,6 +245,20 @@ table td {
     animation: spin 1s linear infinite;
 }
 
+th input {
+    padding: 5px 10px;
+    outline: none;
+
+}
+
+td input {
+    border-radius: 5px;
+    border: none;
+    background: #def4c6;
+    padding: 5px 10px;
+    outline: none;
+}
+
 
 @media (max-width: 1400px) {
 
@@ -281,6 +290,8 @@ table td {
 
 }
 
+
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -289,9 +300,4 @@ table td {
     100% {
         transform: rotate(360deg);
     }
-}
-
-th input {
-    padding: 5px 10px;
-    outline: none;
 }
