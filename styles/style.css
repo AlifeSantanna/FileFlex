@@ -250,6 +250,37 @@ table td {
     animation: spin 1s linear infinite;
 }
 
+
+@media (max-width: 1400px) {
+
+    .container {
+        padding: 20px 40px;
+    }
+
+    .container_button {
+        margin-top: 20px;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        position: relative;
+    }
+
+    .box {
+        width: 80%;
+        height: 480px;
+    }
+
+    .table_container {
+        width: 100%;
+        height: 425px;
+    }
+
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
