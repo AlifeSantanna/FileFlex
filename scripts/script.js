@@ -44,7 +44,7 @@ function displayDataInTable(data) {
 
     var hour = parseInt(data[i]["Hora"]);
     var chapa = parseInt(data[i]["Chapa"]);
-    if ([4, 5, 9].includes(hour) || [parseInt("00000")].includes(chapa)) {
+    if ([4,5,6,7,8,9].includes(hour) || [parseInt("00000")].includes(chapa)) {
       row.style.backgroundColor = "#ff3c38ba";
       row.style.color = "#ffffff";
     }
