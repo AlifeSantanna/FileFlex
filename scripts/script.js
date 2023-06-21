@@ -44,7 +44,7 @@ function displayDataInTable(data) {
 
     var hour = parseInt(data[i]["Hora"]);
     var chapa = parseInt(data[i]["Chapa"]);
-    if ([4,5,6,7,8,9].includes(hour) || [parseInt("00000")].includes(chapa)) {
+    if ([4, 5, 6, 7, 8, 9].includes(hour) || [parseInt("00000")].includes(chapa)) {
       row.style.backgroundColor = "#ff3c38ba";
       row.style.color = "#ffffff";
     }
@@ -166,10 +166,25 @@ function displayTotalData(data) {
     var cellQuantitativo = document.createElement("td");
     var numRefeicoes = parseInt(data[i]["Nº de Refeições"]) || 0;
     var quantitativo = (numRefeicoes * 1000).toString().padStart(6, "0");
-    cellQuantitativo.textContent = quantitativo;
+    
+    var inputElement = document.createElement("input");
+    inputElement.type = "text";
+    inputElement.maxLength = 6; // Define o limite máximo de caracteres
+    inputElement.value = quantitativo;
+    
+    inputElement.addEventListener("input", function() {
+      var inputValue = inputElement.value;
+      if (inputValue.length > 6) {
+        inputElement.value = inputValue.slice(0, 6); // Trunca o valor para 6 caracteres
+      }
+      quantitativo = inputElement.value;
+    });
+    
+    cellQuantitativo.appendChild(inputElement);
     row.appendChild(cellQuantitativo);
-
     tbody.appendChild(row);
+    
+    
   }
 
   var totalInfoSpan = document.getElementById("totalInfoSpan");
